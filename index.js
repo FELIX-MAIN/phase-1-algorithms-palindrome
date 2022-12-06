@@ -1,38 +1,35 @@
-function isPalindrome(word) {
-  // Write your algorithm here
-  /* 
-    Step 1: Start
-    Step 2: Declare variable re
-    Step 3: specify string to lowercase
-    Step 4: Declare variable len to represent string length
-    Step 5; Iterate over each item
-    Step 6: if word iterated !== word length
-          return false;
-          else
-          return true; 
-    Step 7: Stop
-  */
-  var re = /[^A-Za-z0-9]/g;
- word = word.toLowerCase().replace(re, '');
- var len = word.length;
- for (var i = 0; i < len/2; i++) {
-   if (word[i] !== word[len - 1 - i]) {
-       return false;
-   }
- }
- return true;
+function reverseString(word) {
+  // create an array from the input string
+  const wordArray = word.split("");
+  // reverse the array
+  const reversedWordArray = wordArray.reverse();
+  // create a string from the reversed array
+  const reversedWord = reversedWordArray.join("");
+  // return the reversed string
+  return reversedWord;
 }
-isPalindrome("")
+
+function isPalindrome(word) {
+  //reverse the input string
+  const reversedWord = reverseString(word);
+  //if the reversed string is the same as the input
+  //   return true
+  // else
+  //   return false
+  if (word === reversedWord) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 /* 
-  Add your pseudocode here
- 
-  initialize a variable called re
-      specify our string toLowercase
-      iniialize another variable len to check the lenght of the string
-      iterate over each item in the variable
-      if string is not equal to string length expected
-          return result
+  reverse the input string
+
+if the reversed string is the same as the input
+  return true
+else
+  return false
 */
 
 /*
